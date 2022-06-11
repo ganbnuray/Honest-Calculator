@@ -60,19 +60,21 @@ def check(num1, num2, operator):
 def memory_assign(result):
     answer = input(messages["msg_4"])
     if answer == "y":
-      if is_one_digit(result):
-        msg_index = 10
-        while msg_index <= 12:
-          variable = "msg_{}".format(msg_index)
-          answer = input(messages[variable])
-          if answer == "y":
-            msg_index +=1
-          else:
-            break
+        if is_one_digit(result):
+            msg_index = 10
+            while msg_index <= 12:
+                variable = "msg_{}".format(msg_index)
+                answer = input(messages[variable])
+                if answer == "y":
+                    msg_index +=1
+                else:
+                    global memory
+                    memory = result
+            else:
+                memory = result
         else:
-          global memory
-          memory = result
-      else:
+            memory = result
+    else:
         memory = result
 
 
