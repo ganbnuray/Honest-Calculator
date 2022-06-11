@@ -68,14 +68,15 @@ def memory_assign(result):
                 if answer == "y":
                     msg_index +=1
                 else:
-                    global memory
-                    memory = result
+                    break
             else:
+                global memory
                 memory = result
         else:
             memory = result
     else:
         memory = result
+        pass
 
 
 def continue_calc():
